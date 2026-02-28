@@ -1,18 +1,45 @@
-# aws-best-practice
+# AWSベストプラクティス IaCリポジトリ
 
-AWS のベストプラクティスを Infrastructure as Code (IaC) で管理するためのリポジトリです。
+このリポジトリは、AWSの様々なアーキテクチャパターンをベストプラクティスに沿って実装した、Infrastructure as Code (IaC) のテンプレート集です。
+
+## 概要
+
+このリポジトリの目的は、一般的なAWSのユースケースに対して、すぐに利用できる、よく設計されたソリューションを提供することです。テンプレートはAWS CloudFormationで記述されており、セキュリティ、スケーラビリティ、コスト効率を考慮して設計されています。
 
 ## ディレクトリ構成
 
-- `iac/`: IaC ファイルを配置するディレクトリ
+- `iac/`: 各アーキテクチャのCloudFormationテンプレートが格納されています。
+- `draw.io/`: アーキテクチャ図の元ファイルが格納されています。
+- `img/`: エクスポートされたアーキテクチャ図の画像が格納されています。
 
-## 使い方
+## 利用可能なアーキテクチャパターン
 
-1. `iac/` 配下に Terraform や CloudFormation などの定義を追加します。
-2. 必要に応じて検証・デプロイ手順を本 README に追記します。
+`iac`ディレクトリには、以下のアーキテクチャパターンのテンプレートが含まれています。各パターンの詳細については、[`iac/README.md`](./iac/README.md)を参照してください。
 
-## 今後の拡張例
+- **コンテナオーケストレーション**: Amazon ECSまたはEKSを使用してコンテナオーケストレーション環境をデプロイします。
+- **コスト最適化サーバーレス**: API Gateway、Lambda、DynamoDBを使用してコスト最適化されたサーバーレスアプリケーションを実装します。
+- **高可用性パターン**: 複数のアベイラビリティゾーンにまたがる高可用で耐障害性のあるアーキテクチャをセットアップします。
+- **Langfuse on AWS**: AWS上にLangfuse可観測性プラットフォームをデプロイします。
+- **S3静的ウェブサイト**: Amazon S3とCloudFrontを使用して、セキュアでスケーラブルな静的ウェブサイトをホストします。
+- **サーバーレスAPI**: API GatewayとLambdaを使用して標準的なサーバーレスAPIを作成します。
+- **ストリーミングアーキテクチャ**: リアルタイムデータストリーミングアーキテクチャを構築します。
+- **3層アーキテクチャ**: 古典的な3層ウェブアプリケーションをデプロイします。
+- **VPC Latticeサービス間通信**: VPC Latticeを使用したサービス間通信を実証します。
 
-- コーディング規約の追加
-- Lint / Format / Validate の自動化
-- CI/CD パイプラインの整備
+## 利用方法
+
+1.  `iac`ディレクトリに移動します。
+2.  ユースケースに合ったテンプレートを選択します。
+3.  AWSマネジメントコンソールまたはAWS CLIを使用してスタックをデプロイします。
+
+### AWS CLIでのデプロイ例
+
+```bash
+aws cloudformation create-stack \
+  --stack-name my-architecture-stack \
+  --template-body file://iac/<template-name>.yaml \
+  --parameters ParameterKey=MyParameter,ParameterValue=MyValue \
+  --capabilities CAPABILITY_IAM
+```
+
+**注意:** 各テンプレートには固有のパラメータや要件があります。詳細については、`iac/README.md`内の各テンプレートのドキュメントや、テンプレートファイル自体を確認してください。
