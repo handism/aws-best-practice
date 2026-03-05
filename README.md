@@ -49,3 +49,13 @@ aws cloudformation create-stack \
 aws-iacサーバーを使って、なるべく安価にAWSを利用する構成のCloudFormationのコードをYAMLで書いて。最新のベストプラクティスを反映して。
 
 さらに、作成したIaCのコードを元にして、AWSの構成図をDraw.ioで作成して。AWSサービスについては、ちゃんとAWS公式が提供している「AWS 2026」のアイコンを利用してください。
+
+## Codex Skill
+
+この指示を再利用できるよう、以下のSkillを追加しています。
+
+- Skill名: `$aws-cost-optimized-cfn-drawio`
+- 定義: `skills/aws-cost-optimized-cfn-drawio/SKILL.md`
+- 参照資料:
+  - `skills/aws-cost-optimized-cfn-drawio/references/cost-checklist.md`
+  - `skills/aws-cost-optimized-cfn-drawio/references/drawio-aws-2026.md`
