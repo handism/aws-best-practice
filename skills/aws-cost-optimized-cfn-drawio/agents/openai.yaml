@@ -1,4 +1,4 @@
 interface:
-  display_name: "AWS Cost-Optimized CFN + Draw.io"
-  short_description: "低コストAWS IaC生成と公式AWS 2026図面作成を支援"
-  default_prompt: "Use $aws-cost-optimized-cfn-drawio to produce cost-optimized CloudFormation YAML and a Draw.io architecture diagram with official AWS 2026 icons."
+  display_name: "AWS Themed CFN + Draw.io"
+  short_description: "指定テーマ準拠のAWS IaC生成と公式AWS 2026図面作成を支援"
+  default_prompt: "Use $aws-cost-optimized-cfn-drawio to produce CloudFormation YAML and a Draw.io architecture diagram that follow the user's specified AWS architecture theme, using official AWS 2026 icons."

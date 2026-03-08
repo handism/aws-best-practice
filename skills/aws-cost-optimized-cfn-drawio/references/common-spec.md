@@ -2,10 +2,11 @@
 
 ## Purpose
 
-低コストなAWS構成をCloudFormation (YAML) で作成し、同一構成のDraw.io図を公式AWS 2026アイコンで作る。
+ユーザーが指定したテーマに従うAWS構成をCloudFormation (YAML) で作成し、同一構成のDraw.io図を公式AWS 2026アイコンで作る。
 
 ## Inputs
 
+- architecture_theme: string
 - workload_type: `api|batch|static|event`
 - availability: `single-az|multi-az`
 - traffic_level: `low|medium|high`
@@ -19,13 +20,13 @@
 2. Draw.io file: `draw.io/<name>.drawio`
 3. Optional SVG export: `img/<name>.drawio.svg`
 4. Summary（以下を含める）
-- cost decisions (3-7 points)
+- theme alignment decisions (3-7 points)
 - best-practice source links (AWS official)
 - icon usage note (AWS 2026)
 
 ## Workflow Contract
 
-1. 要件不足時はコスト最適化の既定値を採用する
+1. アーキテクチャテーマを最優先入力として扱い、未指定時は追加確認が必要
 2. `aws-iac` サーバーが使える場合は優先利用する
 3. CloudFormationは次を必須にする
 - Parameters/Outputs
@@ -47,4 +48,4 @@
 - YAML構文エラーがない
 - 主要リソース欠落がない
 - 通信方向と境界が一致する
-- コスト最適化項目が説明されている
+- テーマ反映の意図が説明されている
