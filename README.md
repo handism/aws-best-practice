@@ -46,16 +46,17 @@ aws cloudformation create-stack \
 
 ## Amazon Qへの指示出し方法
 
-aws-iacサーバーを使って、なるべく安価にAWSを利用する構成のCloudFormationのコードをYAMLで書いて。最新のベストプラクティスを反映して。
+aws-iacサーバーを使って、指定したアーキテクチャテーマに従うAWS構成のCloudFormationコードをYAMLで書いて。最新のベストプラクティスを反映して。
 
-さらに、作成したIaCのコードを元にして、AWSの構成図をDraw.ioで作成して。AWSサービスについては、ちゃんとAWS公式が提供している「AWS 2026」のアイコンを利用してください。
+さらに、作成したIaCのコードを元にして、AWSの構成図をDraw.ioで作成して。AWSサービスについては、AWS公式が提供している「AWS 2026」のアイコンを利用してください。アーキテクチャのテーマは毎回指示するので、その内容に従って構成を作成してください。
 
 ## Codex Skill
 
 この指示を再利用できるよう、以下のSkillを追加しています。
 
-- Skill名: `$aws-cost-optimized-cfn-drawio`
-- 定義: `skills/aws-cost-optimized-cfn-drawio/SKILL.md`
+- Skill名: `$aws-themed-cfn-drawio`
+- 定義: `skills/aws-themed-cfn-drawio/SKILL.md`
+- 役割: 毎回ユーザーが指定するAWSアーキテクチャテーマに従って、CloudFormationとDraw.io図を整合して作成する
 - 参照資料:
-  - `skills/aws-cost-optimized-cfn-drawio/references/cost-checklist.md`
-  - `skills/aws-cost-optimized-cfn-drawio/references/drawio-aws-2026.md`
+  - `skills/aws-themed-cfn-drawio/references/cost-checklist.md`
+  - `skills/aws-themed-cfn-drawio/references/drawio-aws-2026.md`

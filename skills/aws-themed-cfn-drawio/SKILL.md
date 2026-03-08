@@ -1,5 +1,5 @@
 ---
-name: aws-cost-optimized-cfn-drawio
+name: aws-themed-cfn-drawio
 description: AWSアーキテクチャをCloudFormation(YAML)で設計し、そのIaCに対応するDraw.io構成図を作成する。ユーザーが指定したアーキテクチャのテーマに従って構成を作る必要があるとき、`aws-iac`サーバーの利用を求められたとき、最新ベストプラクティス反映を求められたとき、公式AWSアイコン（AWS 2026）を使った図面作成を求められたときに使う。
 ---
 

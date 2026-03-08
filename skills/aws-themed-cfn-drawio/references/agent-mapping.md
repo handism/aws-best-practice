@@ -7,7 +7,7 @@
 
 ## Codex
 
-- Trigger: `$aws-cost-optimized-cfn-drawio`
+- Trigger: `$aws-themed-cfn-drawio`
 - Skill body: `SKILL.md`
 - UI metadata: `agents/openai.yaml`
 
